@@ -1,0 +1,242 @@
+[gd_scene load_steps=11 format=3 uid="uid://c24grs1xmgjlm"]
+
+[ext_resource type="FontFile" uid="uid://dmrmg8x01rqji" path="res://Assets/more fonts/KiriFont.ttf" id="1_lsveh"]
+[ext_resource type="Texture2D" uid="uid://ha0dr80okdn3" path="res://Assets/UI/grey_button04.png" id="2_obpqp"]
+[ext_resource type="Texture2D" uid="uid://diska61e1sxpb" path="res://Assets/UI/arrow-UP.png" id="3_t5i8e"]
+[ext_resource type="Texture2D" uid="uid://cldlsxjn1bcl3" path="res://Assets/Blue_Slime/Idle.png" id="4_kmqng"]
+[ext_resource type="Texture2D" uid="uid://gra3cvj6wj8d" path="res://Assets/coin/gold_1.png" id="5_76a0g"]
+[ext_resource type="Texture2D" uid="uid://d0ftl18ql53gy" path="res://Assets/enemies/slimeBlue_blue.png" id="6_mtuj6"]
+[ext_resource type="FontFile" uid="uid://du482mm1t11lj" path="res://Assets/more fonts/Sniglet-Regular.ttf" id="7_e2dpd"]
+[ext_resource type="Script" path="res://PlayButton.gd" id="8_kcpf8"]
+[ext_resource type="AudioStream" uid="uid://d4kiph1iat2ne" path="res://Assets/music/Swinging Pants.ogg" id="9_ikmtd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lg5hv"]
+bg_color = Color(0.384314, 0.215686, 0.6, 1)
+
+[node name="titlemenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.305882, 0, 0.517647, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 104.0
+offset_right = 1145.0
+offset_bottom = 178.0
+theme_override_colors/font_color = Color(0, 0.709804, 0.905882, 1)
+theme_override_colors/font_outline_color = Color(0.607843, 0, 0.643137, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_lsveh")
+theme_override_font_sizes/font_size = 70
+text = "Slimey Platformer game"
+
+[node name="Left panel" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 344.0
+offset_right = 488.0
+offset_bottom = 592.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lg5hv")
+metadata/_edit_group_ = true
+
+[node name="space bar" type="TextureRect" parent="Left panel"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 80.0
+offset_right = 184.0
+offset_bottom = 133.0
+texture = ExtResource("2_obpqp")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="Left panel/space bar"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 8.0
+offset_right = 108.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.00784314, 0.0117647, 0.0156863, 1)
+theme_override_font_sizes/font_size = 25
+text = "SPACE"
+
+[node name="= JUMP" type="Label" parent="Left panel/space bar"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 8.0
+offset_right = 252.0
+offset_bottom = 46.0
+theme_override_colors/font_color = Color(0.87451, 0.913725, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "=  JUMP"
+
+[node name="= MOVE" type="Label" parent="Left panel/space bar"]
+layout_mode = 0
+offset_left = 136.0
+offset_top = 80.0
+offset_right = 237.0
+offset_bottom = 118.0
+theme_override_colors/font_color = Color(0.87451, 0.913725, 1, 1)
+theme_override_font_sizes/font_size = 25
+text = "=  MOVE"
+
+[node name="controls" type="Label" parent="Left panel"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.917647, 0.756863, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Controls"
+
+[node name="TextureRect3" type="TextureRect" parent="Left panel"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 160.0
+offset_right = 104.0
+offset_bottom = 205.0
+texture = ExtResource("2_obpqp")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Left panel/TextureRect3"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 40.0
+offset_right = 42.0
+offset_bottom = 72.0
+rotation = 4.71239
+texture = ExtResource("3_t5i8e")
+expand_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Left panel"]
+layout_mode = 0
+offset_left = 112.0
+offset_top = 160.0
+offset_right = 160.0
+offset_bottom = 205.0
+texture = ExtResource("2_obpqp")
+expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="Left panel/TextureRect4"]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 40.0
+rotation = 1.5708
+texture = ExtResource("3_t5i8e")
+expand_mode = 1
+
+[node name="Left panel2" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 656.0
+offset_top = 344.0
+offset_right = 1096.0
+offset_bottom = 592.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_lg5hv")
+metadata/_edit_group_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="Left panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = -8.0
+offset_right = 135.0
+offset_bottom = 120.0
+texture = ExtResource("4_kmqng")
+
+[node name="TextureRect4" type="TextureRect" parent="Left panel2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 152.0
+offset_right = 248.0
+offset_bottom = 184.0
+texture = ExtResource("5_76a0g")
+expand_mode = 1
+
+[node name="controls" type="Label" parent="Left panel2"]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 144.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.917647, 0.756863, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "Items"
+
+[node name="controls2" type="Label" parent="Left panel2"]
+layout_mode = 0
+offset_left = 104.0
+offset_top = 88.0
+offset_right = 240.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0.984314, 0.952941, 0.964706, 1)
+theme_override_font_sizes/font_size = 25
+text = "= You!"
+
+[node name="controls5" type="Label" parent="Left panel2"]
+layout_mode = 0
+offset_left = 264.0
+offset_top = 152.0
+offset_right = 400.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.984314, 0.952941, 0.964706, 1)
+theme_override_font_sizes/font_size = 25
+text = "to win!"
+
+[node name="controls4" type="Label" parent="Left panel2"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 152.0
+offset_right = 168.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.984314, 0.952941, 0.964706, 1)
+theme_override_font_sizes/font_size = 25
+text = "Collect all the "
+
+[node name="controls3" type="Label" parent="Left panel2"]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 88.0
+offset_right = 392.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0.984314, 0.952941, 0.964706, 1)
+theme_override_font_sizes/font_size = 25
+text = "= Enemy"
+
+[node name="TextureRect3" type="TextureRect" parent="Left panel2"]
+layout_mode = 0
+offset_left = 216.0
+offset_top = 88.0
+offset_right = 248.0
+offset_bottom = 117.0
+texture = ExtResource("6_mtuj6")
+expand_mode = 1
+
+[node name="PlayButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 200.0
+offset_right = 704.0
+offset_bottom = 280.0
+theme_override_colors/font_hover_color = Color(0.890196, 0.615686, 0.662745, 1)
+theme_override_fonts/font = ExtResource("7_e2dpd")
+theme_override_font_sizes/font_size = 50
+text = "Play!"
+flat = true
+script = ExtResource("8_kcpf8")
+
+[node name="music_titlescreen" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_ikmtd")
+volume_db = -12.0
+autoplay = true
+
+[connection signal="pressed" from="PlayButton" to="PlayButton" method="_on_pressed"]

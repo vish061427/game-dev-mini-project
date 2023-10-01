@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://be08r1kri82r7"]
+
+[ext_resource type="Script" path="res://lochi.gd" id="1_n0ugy"]
+[ext_resource type="SpriteFrames" uid="uid://c4c08gwtxvvq8" path="res://lochi_frames.tres" id="2_sox76"]
+[ext_resource type="AudioStream" uid="uid://bh1iny7jwgupn" path="res://Assets/sounds/jump1.ogg" id="3_is8au"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gh0hg"]
+size = Vector2(59, 43)
+
+[node name="Lochi" type="CharacterBody2D"]
+modulate = Color(0.952941, 0.92549, 1, 1)
+position = Vector2(1, 0)
+script = ExtResource("1_n0ugy")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9.53674e-07, -66)
+scale = Vector2(1.2351, 1.33984)
+sprite_frames = ExtResource("2_sox76")
+animation = &"idle"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, -1.5)
+shape = SubResource("RectangleShape2D_gh0hg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="sound_jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_is8au")
+volume_db = -10.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
